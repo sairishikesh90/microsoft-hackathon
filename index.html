@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SafeRoute AI</title>
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <div>
+      <h1>SafeRoute AI</h1>
+      <p>Know the hazard. Avoid the danger. Reach safely.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2>Plan a Safe Route</h2>
+
+      <div class="form-grid">
+        <div>
+          <label>Origin Latitude</label>
+          <input id="originLat" type="number" step="any" value="16.5062" />
+        </div>
+
+        <div>
+          <label>Origin Longitude</label>
+          <input id="originLng" type="number" step="any" value="80.6480" />
+        </div>
+
+        <div>
+          <label>Destination Latitude</label>
+          <input id="destLat" type="number" step="any" value="16.5200" />
+        </div>
+
+        <div>
+          <label>Destination Longitude</label>
+          <input id="destLng" type="number" step="any" value="80.6500" />
+        </div>
+      </div>
+
+      <button id="checkBtn">Check Route Safety</button>
+
+      <p id="message"></p>
+    </section>
+
+    <section id="results" class="results hidden">
+      <div class="cards">
+        <div class="card">
+          <h3>Primary Route</h3>
+          <div id="primaryScore" class="score">--</div>
+          <p id="primaryStatus">--</p>
+        </div>
+
+        <div class="card">
+          <h3>Alternative Route</h3>
+          <div id="alternativeScore" class="score">--</div>
+          <p id="alternativeStatus">--</p>
+        </div>
+
+        <div class="card recommendation">
+          <h3>Recommendation</h3>
+          <p id="recommendation">--</p>
+        </div>
+      </div>
+
+      <div class="content-grid">
+        <div>
+          <h2>Route Map</h2>
+          <div id="map"></div>
+        </div>
+
+        <div>
+          <h2>Detected Hazards</h2>
+          <div id="hazards"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
